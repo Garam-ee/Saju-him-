@@ -376,14 +376,13 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
             text-transform:uppercase}
 
 /* seo */
-/* Three across at every width. Stacking these on a phone pushed the paid card
-   a full screen further down, so the emoji carries the recognition and the
-   type just gets smaller. */
-/* 3단이지만 트랙이 컨테이너를 못 넘게 minmax(0,…)로 묶는다. 좁아지면
-   두 단, 더 좁아지면 한 단으로 접힌다 — 세 단을 억지로 유지하면 글자가
-   카드 밖으로 삐져나온다. */
-.jumps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:16px}
-/* 좁아져도 3분할을 유지한다. 세로로 쌓이면 첫 화면이 세 칸만큼 길어지고,
+/* 2026-11-21 넷째 카드(red flags)를 넣으면서 3단 → 2단(2×2)으로 바꿨다.
+   칸 폭이 496px 이라 4단이면 한 칸이 116px 로 좁아 제목이 대여섯 줄로 끊기고,
+   3단을 유지하면 넷째만 혼자 다음 줄에 남는다. 2×2 는 한 줄만큼만 길어지고
+   카드 폭이 240px 로 넓어져 제목이 두 줄에 들어간다.
+   넘칠 때를 위해 트랙은 그대로 minmax(0,…)로 묶는다. */
+.jumps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:16px}
+/* 좁아져도 2분할을 유지한다. 세로로 쌓이면 첫 화면이 네 칸만큼 길어지고,
    그만큼 "시작" 버튼이 밀린다. 대신 글자를 줄여서 넣는다. */
 @media(max-width:560px){.jumps{gap:5px}}
 @media(max-width:400px){.jumps{gap:4px}.jump{padding:9px 7px 10px}}
@@ -2122,7 +2121,7 @@ body.askmode .prog{display:none}
     <input name="buy"><input name="band"><input name="mobile">
   </form>
 
-  <!-- quick jumps — the three things people actually want next -->
+  <!-- quick jumps — the four things people actually want next -->
   <!-- These used to be links off the page. Sending someone away before they've
        entered anything is the one thing this screen must not do, so the answer
        opens underneath instead. The full pages still exist for search. -->
@@ -2157,6 +2156,18 @@ body.askmode .prog{display:none}
       <p>Two couples can land on the same score for completely different reasons.
         The number is a summary of the working, not a verdict.</p>
       <p class="jmore"><a href="/korean-saju-compatibility/">the long version →</a></p>
+    </details>
+    <details class="jump">
+      <summary><span class="je">🚩</span>
+        <span class="jt">is it a red flag, or just his chart?</span>
+        <span class="jd">five that repeat</span></summary>
+      <p>Most red-flag lists are personality traits wearing a warning label. Five
+        chart patterns do repeat &mdash; metal finishing a decision before your
+        last message, water thinning out and coming back, fire for two weeks and
+        then flat.</p>
+      <p>Three of the scariest-sounding ones say almost nothing about how he
+        treats you.</p>
+      <p class="jmore"><a href="/korean-birth-chart-red-flags/">the long version →</a></p>
     </details>
   </div>
 
